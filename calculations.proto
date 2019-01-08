@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message CalculationsRequest {
+    string shape_name = 1;
+    double height = 2;
+    double width = 3;
+    double length = 4;
+}
+
+message CalculationsResponse {
+    string message = 1;
+    double calculated_value = 2;
+}
+
+service CalculationsService {
+    rpc Area (CalculationsRequest) returns (CalculationsResponse);
+    rpc Volume (CalculationsRequest) returns (CalculationsResponse);
+}
